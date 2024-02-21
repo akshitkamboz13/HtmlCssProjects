@@ -40,21 +40,124 @@ section::after {
   height: 225px;
   width: 375px;
   z-index: 100;
-  transition: 0.6s;
+  transition: all 0.6s ease-in-out;
   transform-style: preserve-3d;
   backdrop-filter: blur(25px);
 }
-.container:hover {
+
+.container:hover .card-back {
+  transition: all 0.6s ease;
+  animation-duration: 0.6s;
+  display: block;
   transform: rotateY(180deg);
 }
-.container .card {
+.container:hover .card-front {
+  transition: all 0.6s ease;
+  animation-duration: 0.6s;
+  display: none;
+}
+.container:hover {
+  transform: rotateY(180deg);
+  
+}
+.container .card-front {
   position: absolute;
   height: 100%;
-  width: 100%;
-  padding: 25px;
+  min-width: 100%;
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backface-visibility: hidden;
+  transition: all 0.6s ease-in-out;
+}
+.container .card-back {
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+  padding: 2vh;
+  display: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.6s ease-in-out;
+}
+.card-front .icons1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-front .top {
+  display: flex;
+  justify-content: space-between;
+}
+.card-front .masterLogo {
+  height: 8vh;
+}
+.card-front .chip {
+  height: 10vh;
+}
+.card-front .labelNum {
+  font-size: small;
+}
+.card-front .num {
+  font-size: larger;
+  font-weight: 500;
+}
+.card-front .low {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.card-front .dit1 {
+  font-size: large; 
+}
+.card-front .valid1 {
+  font-size: small;
+}
+.card-front .valid2 {
+  font-size: larger;
+}
+
+
+.card-back .top1 {
+  font-size: 1.2vh;
+}
+.card-back .blackblock {
+  margin: 2vh -2vh;
+  min-height: 5vh;
+  width: calc(100% + 4vh);
+  background-color: #000000;
+}
+.card-back .mid {
+  padding: 1vh;
+  margin: 2vh 0;
+}
+.card-back .mid .swap {
+  height: 5vh;
+  width: 89%;
+  background-image: linear-gradient(0deg, rgb(125, 125, 125) 12.5%, rgb(213, 213, 213) 12.6%, rgb(213, 213, 213) 25%, rgb(125, 125, 125) 25.1%, rgb(125, 125, 125) 37.5%, rgb(213, 213, 213) 37.6%, rgb(213, 213, 213) 50%, rgb(125, 125, 125) 50.1%, rgb(125, 125, 125) 62.5%, rgb(213, 213, 213) 62.6%, rgb(213, 213, 213) 75%, rgb(125, 125, 125) 75.1%, rgb(125, 125, 125) 87.5%, rgb(213, 213, 213) 87.6%, rgb(213, 213, 213) 100%);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  float: left;
+}
+.card-back .mid p {
+  font-weight: 600;
+  margin: 0.5vh 0;
+  height: 4vh;
+  width: 11%;
+  background-color: #ffffff;
+  color: #000000;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  float: left;
+}
+.card-back .bottom {
+  margin: 2vh 0;
+  font-size: 1.5vh;
+  float: left;
 }
